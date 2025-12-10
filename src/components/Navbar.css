@@ -1,5 +1,5 @@
 /* =======================
-   DESKTOP NAVBAR
+   BASE NAVBAR (DESKTOP)
 ======================= */
 .navbar {
   background-color: #1e293b;
@@ -15,12 +15,18 @@
   font-size: 1.5rem;
 }
 
+/* WRAPPER for Search + Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 /* Search Bar */
 .search-form {
   display: flex;
   flex: 1;
   max-width: 400px;
-  margin: 0 20px;
 }
 
 .search-form input {
@@ -61,32 +67,28 @@
 }
 
 /* =======================
-   HAMBURGER (Mobile Only)
+   HAMBURGER (Mobile)
 ======================= */
 .hamburger {
   display: none;
   font-size: 28px;
   cursor: pointer;
-  -webkit-user-select: none;
-  user-select: none;
 }
 
 /* =======================
    MOBILE RESPONSIVE
 ======================= */
 @media (max-width: 768px) {
-  /* Show hamburger */
   .hamburger {
     display: block;
   }
 
   /* Hide desktop items */
-  .search-form,
-  .nav-links {
+  .nav-menu {
     display: none;
   }
 
-  /* Mobile Menu Wrapper */
+  /* When open = show mobile menu */
   .nav-menu.open {
     display: flex;
     flex-direction: column;
@@ -97,12 +99,11 @@
     margin-top: 10px;
   }
 
-  /* Search full-width */
+  /* Search full width */
   .nav-menu.open .search-form {
     display: flex;
     width: 100%;
     margin: 0;
-    flex-direction: row;
   }
 
   .nav-menu.open .search-form input,
