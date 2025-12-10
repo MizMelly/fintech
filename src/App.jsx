@@ -12,7 +12,7 @@ import Extensions from "./components/pages/Extensions";
 import HairCare from "./components/pages/HairCare";
 import Accessories from "./components/pages/Accessories";
 import Cart from "./components/pages/Cart";
-import Checkout from "./components/CheckOut";
+import Checkout from "./components/Checkout";
 import OrderConfirmation from "./components/OrderConfirmation";
 import Orders from "./components/pages/Orders";
 import OrdersHistory from "./components/pages/OrdersHistory";
