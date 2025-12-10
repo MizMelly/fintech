@@ -7,12 +7,14 @@ function Navbar() {
   const { cart } = useCart();
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (search.trim()) {
       navigate(`/shop?search=${encodeURIComponent(search.trim())}`);
       setSearch("");
+      setMenuOpen(false);
     }
   };
 
@@ -20,24 +22,34 @@ function Navbar() {
     <nav className="navbar">
       <h1 className="logo">ManesBySplash</h1>
 
-      <form className="search-form" onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Search products..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <button type="submit">Search</button>
-      </form>
+      {/* Mobile Menu Toggle */}
+      <div 
+        className="hamburger" 
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
+      </div>
 
-      <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/categories">Categories</Link></li>
-        <li><Link to="/contact">Contact Us</Link></li>
-        <li><Link to="/cart">Cart ({cart.length})</Link></li>
-        <li><Link to="/orders">My Orders</Link></li>
-        <li><Link to="/track-order">Track Order</Link></li>
-      </ul>
+      <div className={`nav-menu ${menuOpen ? "open" : ""}`}>
+        <form className="search-form" onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <button type="submit">Search</button>
+        </form>
+
+        <ul className="nav-links">
+          <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
+          <li><Link to="/categories" onClick={() => setMenuOpen(false)}>Categories</Link></li>
+          <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</Link></li>
+          <li><Link to="/cart" onClick={() => setMenuOpen(false)}>Cart ({cart.length})</Link></li>
+          <li><Link to="/orders" onClick={() => setMenuOpen(false)}>My Orders</Link></li>
+          <li><Link to="/track-order" onClick={() => setMenuOpen(false)}>Track Order</Link></li>
+        </ul>
+      </div>
     </nav>
   );
 }
