@@ -1,0 +1,109 @@
+.shop {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f8fafc;
+}
+
+.shop h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+.shop p {
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  margin: 1rem auto 3rem;
+  max-width: 700px;
+  line-height: 1.7;
+}
+.back-btn {
+  background-color: transparent;
+  color: #444;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+  color: #e91e63;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+/* 🧱Product Card */
+.product-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  max-width: 230px;
+  width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 🖼 Product Image */
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+/* 📋 Product Details */
+.product-card h3 {
+  font-size: 1rem;
+  color: #1e293b;
+  margin: 0.5rem 0;
+}
+
+.product-card p {
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 0.8rem;
+}
+
+/* 🛒 Add to Cart Button */
+.product-card button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: #1e40af;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}

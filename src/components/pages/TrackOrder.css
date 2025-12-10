@@ -1,0 +1,77 @@
+.track-order-page {
+  text-align: center;
+  padding: 40px;
+}
+
+.track-input {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.track-input input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.track-input button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.order-details {
+  margin-top: 30px;
+  text-align: left;
+  display: inline-block;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.status.processing { color: orange; }
+.status.shipped { color: blue; }
+.status.delivered { color: green; }
+
+.track-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.track-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.total {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.back-btn {
+  margin-top: 20px;
+  background: #222;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
