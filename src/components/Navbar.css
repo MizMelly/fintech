@@ -91,17 +91,21 @@
     display: none;
   }
 
-  /* MOBILE DROPDOWN */
+  /* MOBILE MENU — overlays page without pushing content */
   .nav-menu.open {
     display: flex;
     flex-direction: column;
     background-color: #1e293b;
     width: 100%;
     position: absolute;
-    top: 60px;        /* sits below navbar */
+    top: 60px;              /* drops below navbar */
     left: 0;
     padding: 20px;
     gap: 25px;
+
+    /* NEW — prevents pushing content down */
+    position: absolute;
+    z-index: 999;          /* stays above slider */
   }
 
   /* Search full width */
@@ -116,15 +120,16 @@
     font-size: 16px;
   }
 
-  /* Vertical links + brighter color */
+  /* Vertical links */
   .nav-menu.open .nav-links {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
 
+  /* Make links readable */
   .nav-menu.open .nav-links a {
-    color: #e2e8f0; /* brighter for readability */
+    color: #e2e8f0;
     font-size: 18px;
   }
 
